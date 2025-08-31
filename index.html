@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nataraj M - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a1a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+
+        /* The main animated gradient background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.3), rgba(10, 10, 26, 0) 60%),
+                        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.2), rgba(10, 10, 26, 0) 50%),
+                        radial-gradient(circle at 80% 90%, rgba(139, 92, 246, 0.2), rgba(10, 10, 26, 0) 50%);
+            animation: moveGradient 20s infinite alternate linear;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Glassmorphism effect for cards and nav */
+        .glass-effect {
+            background: rgba(20, 20, 40, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* 3D tilt effect for project cards */
+        .project-card {
+            transform-style: preserve-3d;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        /* Animation for elements scrolling into view */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="gradient-bg"></div>
+
+    <header class="fixed top-0 left-0 w-full z-50 p-4 glass-effect">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-white tracking-wider">Nataraj M</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-300">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-300">Skills</a>
+                <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors duration-300">Testimonials</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 px-6 rounded-lg transition-transform transform hover:scale-105 duration-300">
+                Hire Me
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center px-4">
+            <div class="max-w-4xl reveal">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white leading-tight">
+                    <span class="text-gray-400">I'm Nataraj M</span><br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">
+                        Software Developer
+                    </span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                    Passionate Full-Stack Developer exploring Cloud and DevOps, driven to build practical and scalable applications
+                </p>
+                <a href="#projects" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105 duration-300 inline-block">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 px-4">
+            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center reveal">
+                <div class="w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg" alt="Portrait of Nataraj" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 text-white">About Me</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Hello! I'm Nataraj , An Information Technology student with practical experience in both Java and full-stack web development. My skills are supported by internships where I developed Java applications at Oasis Infobyte and built responsive websites at Edu-versity.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        I hold certifications in Java, Data Science, and Cyber Security and have a proven track record of leadership and collaboration on academic projects. I am fluent in English and Tamil and eager to apply my skills in a dynamic technical environment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 px-4 bg-black bg-opacity-20">
+            <div class="container mx-auto reveal">
+                <h2 class="text-4xl font-bold mb-12 text-center text-white">Work Experience</h2>
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
+    
+                    <div class="relative mb-8 flex justify-between items-center w-full">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="p-6 glass-effect rounded-lg">
+                                <h3 class="text-xl font-bold text-indigo-400">Java Development Intern</h3>
+                                <p class="text-gray-400 mb-2">Oasis Infobyte</p>
+                                <p class="text-sm text-gray-500">2025 - Present</p>
+                                <p class="text-gray-300 mt-2 text-sm"> Designed and implemented Java-based applications focusing on OOP and clean 
+code practices.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-500 rounded-full z-10 border-4 border-gray-800"></div>
+                        <div class="w-1/2"></div>
+                    </div>
+    
+                    <div class="relative mb-8 flex justify-between items-center w-full">
+                        <div class="w-1/2"></div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-500 rounded-full z-10 border-4 border-gray-800"></div>
+                        <div class="w-1/2 pl-8 text-left">
+                                <div class="p-6 glass-effect rounded-lg">
+                                <h3 class="text-xl font-bold text-indigo-400">Full Stack Web Developer Intern</h3>
+                                <p class="text-gray-400 mb-2"> Edu-versity</p>
+                                <p class="text-sm text-gray-500">2024-2025</p>
+                                <p class="text-gray-300 mt-2 text-sm">Developed responsive web pages using HTML, CSS, and JavaScript.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mb-8 flex justify-between items-center w-full">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="p-6 glass-effect rounded-lg">
+                                <h3 class="text-xl font-bold text-indigo-400">Junior Developer</h3>
+                                <p class="text-gray-400 mb-2">Creative Agency</p>
+                                <p class="text-sm text-gray-500">2023 - 2024</p>
+                                <p class="text-gray-300 mt-2 text-sm">Assisted in building and testing responsive websites for a variety of clients.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-500 rounded-full z-10 border-4 border-gray-800"></div>
+                        <div class="w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 px-4">
+            <div class="container mx-auto reveal">
+                <h2 class="text-4xl font-bold mb-12 text-center text-white">My Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style="perspective: 1000px;">
+                    
+                    <div class="project-card glass-effect rounded-2xl overflow-hidden p-6 text-center shadow-lg">
+                        <img src="https://afdc.energy.gov/files/vehicles/hydrogen-high-res.jpg" alt="Project One" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-2xl font-semibold mb-2 text-white"> Waste Water Running Car</h3>
+                        <p class="text-gray-400 mb-4">Collaborated 
+on the design of an innovative prototype aimed at sustainable energy solutions.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium">Live Demo</a>
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium">Source Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-effect rounded-2xl overflow-hidden p-6 text-center shadow-lg">
+                        <img src="https://uicookies.com/wp-content/uploads/2020/03/Wiser-1024x807.jpg" alt="Project Two" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-2xl font-semibold mb-2 text-white">College Website</h3>
+                        <p class="text-gray-400 mb-4">Contributed to 
+development of a fully functional college portal using web technologies.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium">Live Demo</a>
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium">Source Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-effect rounded-2xl overflow-hidden p-6 text-center shadow-lg">
+                        <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2019_20/1438247/babies-sitting-devices-today-main-190517.jpg" alt="Project Three" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-2xl font-semibold mb-2 text-white">Sleep Guardian</h3>
+                        <p class="text-gray-400 mb-4">Leading a project to design a 
+smart system for monitoring and improving sleep health.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium">Live Demo</a>
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium">Source Code</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 px-4 bg-black bg-opacity-20">
+            <div class="container mx-auto text-center reveal">
+                <h2 class="text-4xl font-bold mb-12 text-white">Technologies I Use</h2>
+                <div class="flex flex-wrap justify-center items-center gap-6">
+                    <div class="p-4 glass-effect rounded-lg flex items-center space-x-3 transition-transform transform hover:scale-110 duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript" class="h-10 w-10">
+                        <span class="font-medium text-lg">JavaScript</span>
+                    </div>
+                        <div class="p-4 glass-effect rounded-lg flex items-center space-x-3 transition-transform transform hover:scale-110 duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" alt="TypeScript" class="h-10 w-10">
+                        <span class="font-medium text-lg">TypeScript</span>
+                    </div>
+                    <div class="p-4 glass-effect rounded-lg flex items-center space-x-3 transition-transform transform hover:scale-110 duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" class="h-10 w-10">
+                        <span class="font-medium text-lg">React</span>
+                    </div>
+                    <div class="p-4 glass-effect rounded-lg flex items-center space-x-3 transition-transform transform hover:scale-110 duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js" class="h-10 w-10">
+                        <span class="font-medium text-lg">Node.js</span>
+                    </div>
+                    <div class="p-4 glass-effect rounded-lg flex items-center space-x-3 transition-transform transform hover:scale-110 duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="h-10 w-10">
+                        <span class="font-medium text-lg">Tailwind CSS</span>
+                    </div>
+                    <div class="p-4 glass-effect rounded-lg flex items-center space-x-3 transition-transform transform hover:scale-110 duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="h-10 w-10">
+                        <span class="font-medium text-lg">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-24 px-4">
+            <div class="container mx-auto reveal">
+                <h2 class="text-4xl font-bold mb-12 text-center text-white">What Others Say</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-effect p-8 rounded-2xl">
+                        <p class="text-gray-300 italic mb-4">"Nataraj is a highly skilled developer with a keen eye for detail. The final product exceeded our expectations, and the process was seamless from start to finish."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/100x100/1a1a2e/ffffff?text=JD" alt="Jane Doe" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-white">Ankit</p>
+                                <p class="text-gray-400">Admin, Edu versity</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="glass-effect p-8 rounded-2xl">
+                        <p class="text-gray-300 italic mb-4">"Working with Nataraj was a pleasure. His communication skills are top-notch, and he consistently delivered high-quality work on time. Highly recommended!"</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/100x100/1a1a2e/ffffff?text=JS" alt="John Smith" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-white">Purushothaman</p>
+                                <p class="text-gray-400">CEO,GAMPS Pvt limited</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="glass-effect p-8 rounded-2xl">
+                        <p class="text-gray-300 italic mb-4">"The level of creativity and technical expertise Nataraj brings to the table is impressive. He transformed our vision into a stunning, functional website."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/100x100/1a1a2e/ffffff?text=ES" alt="Emily Stone" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-white">Kishore Kumar</p>
+                                <p class="text-gray-400">Student,Velammal Engineering college</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 px-4 bg-black bg-opacity-20">
+            <div class="container mx-auto max-w-2xl text-center reveal">
+                <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <p class="text-gray-300 mb-8">Have a project in mind or just want to say hello? My inbox is always open.</p>
+                <a href="mailto:hello@alexdoe.com" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105 duration-300 shadow-[0_0_20px_rgba(99,102,241,0.5)]">
+                    natarajm9876@gmail.com
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-8 px-4">
+        <div class="container mx-auto text-center text-gray-500">
+            <p>&copy; 2025 Nataraj M. Crafted with care in Chennai, India.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 3D Tilt Effect for Project Cards ---
+            const cards = document.querySelectorAll('.project-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    const rotateX = (y / rect.height) * -30; // Max rotation 15 degrees
+                    const rotateY = (x / rect.width) * 30; // Max rotation 15 degrees
+
+                    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                    card.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.5)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+                    card.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                });
+            });
+
+            // --- Scroll Reveal Animation ---
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+
